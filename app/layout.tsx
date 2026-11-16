@@ -46,10 +46,73 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${sans.variable} ${display.variable} ${mono.variable} h-full`}
     >
+      <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `a[href*="netlify"], [id*="netlify"], [class*="netlify"], iframe[src*="netlify"], div[style*="z-index: 2147483647"] { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; width: 0 !important; height: 0 !important; }`,
+          }}
+        />
+      </head>
       <body className="min-h-full bg-background text-foreground antialiased font-sans">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){
+  var needles = ["powered by netlify", "netlify.com"];
+  function hasNeedle(str) {
+    if (!str) return false;
+    var low = String(str).toLowerCase();
+    return needles.some(function(n){ return low.indexOf(n) !== -1; });
+  }
+  function cleanNode(root) {
+    if (!root || !root.querySelectorAll) return;
+    var sel = 'a[href*="netlify"], [id*="netlify"], [class*="netlify"], iframe[src*="netlify"], div[style*="z-index: 2147483647"]';
+    root.querySelectorAll(sel).forEach(function(el){ el.remove(); });
+    var all = root.querySelectorAll('*');
+    all.forEach(function(el){
+      if (!el || !el.isConnected) return;
+      var tag = el.tagName;
+      if (tag === 'HTML' || tag === 'HEAD' || tag === 'BODY' || tag === 'SCRIPT' || tag === 'STYLE') return;
+      if (el.shadowRoot) {
+        if (hasNeedle(el.shadowRoot.innerHTML)) {
+          el.remove();
+          return;
+        }
+        cleanNode(el.shadowRoot);
+      }
+      if (el.children.length === 0 && hasNeedle(el.innerText || el.textContent)) {
+        var host = el.closest('div[style*="fixed"], aside, footer, a, [id*="netlify"], [class*="netlify"]') || el;
+        if (host && host.tagName !== 'BODY' && host.tagName !== 'HTML') {
+          host.remove();
+        } else {
+          el.remove();
+        }
+      }
+    });
+  }
+  function run(){ cleanNode(document); }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+  var obs = new MutationObserver(function(muts){
+    for (var i = 0; i < muts.length; i++) {
+      var added = muts[i].addedNodes;
+      for (var j = 0; j < added.length; j++) {
+        var node = added[j];
+        if (node && node.nodeType === 1) {
+          cleanNode(node.parentNode || document);
+        }
+      }
+    }
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+})();`,
+          }}
+        />
       </body>
     </html>
   );
