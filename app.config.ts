@@ -32,15 +32,15 @@ export interface AppConfig {
 }
 
 export const appConfig: AppConfig = {
-  name: "Replio",
+  name: "Takvim 360",
   tagline: { tr: "WhatsApp'taki her müşteriye saniyeler içinde yanıt.", en: "Reply to every customer on WhatsApp in seconds." },
   description: {
-    tr: "Replio, WhatsApp ve diğer kanallardaki müşteri mesajlarını tek gelen kutusunda toplar; bilgi tabanından beslenen AI her mesaja markanın diliyle bir yanıt önerir — ekibin tek tıkla gönderir, gerisini otomasyonlar halleder.",
-    en: "Replio unifies customer messages from WhatsApp and beyond into one inbox; a knowledge-grounded AI drafts a reply in your brand voice for every message — your team sends with one tap, automations handle the rest.",
+    tr: "Takvim 360, WhatsApp ve diğer kanallardaki müşteri mesajlarını tek gelen kutusunda toplar; bilgi tabanından beslenen AI her mesaja markanın diliyle bir yanıt önerir — ekibin tek tıkla gönderir, gerisini otomasyonlar halleder.",
+    en: "Takvim 360 unifies customer messages from WhatsApp and beyond into one inbox; a knowledge-grounded AI drafts a reply in your brand voice for every message — your team sends with one tap, automations handle the rest.",
   },
-  domain: "replio.app",
-  logoText: "Ya",
-  accentName: "indigo",
+  domain: "takvim360.app",
+  logoText: "T3",
+  accentName: "emerald",
 
   marketing: {
     badge: { tr: "AI müşteri destek asistanı", en: "AI customer-support assistant" },

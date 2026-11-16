@@ -16,82 +16,82 @@
   --radius-xs: 0.5rem; --radius-sm: 0.625rem; --radius-md: 0.875rem;
   --radius-lg: 1.125rem; --radius-xl: 1.5rem; --radius-2xl: 2rem; --radius-3xl: 2.25rem;
 
-  /* LIGHT — the primary Yanıtla look. Faint sky-tinted paper, indigo ink. */
-  --color-background: oklch(98.8% 0.006 258);
-  --color-foreground: oklch(24% 0.04 264);
-  --color-muted: oklch(96.4% 0.01 252);
-  --color-muted-foreground: oklch(52% 0.03 260);
-  --color-border: oklch(92% 0.013 252);
-  --color-input: oklch(92% 0.013 252);
-  --color-ring: oklch(58% 0.2 258);
-  --color-card: oklch(99.6% 0.003 258);
-  --color-card-foreground: oklch(24% 0.04 264);
-  --color-popover: oklch(99.6% 0.003 258);
-  --color-popover-foreground: oklch(24% 0.04 264);
-  --color-primary: oklch(55% 0.22 258);
-  --color-primary-foreground: oklch(99% 0.006 258);
-  --color-accent: oklch(55% 0.22 258);
-  --color-accent-foreground: oklch(99% 0.006 258);
-  --color-secondary: oklch(95% 0.018 248);
-  --color-secondary-foreground: oklch(30% 0.04 262);
-  --color-destructive: oklch(60% 0.21 25);
-  --color-destructive-foreground: oklch(99% 0.006 258);
+  /* LIGHT — Takvim 360: clean white/gray surfaces, dark anthracite ink, emerald green accent. */
+  --color-background: oklch(98.4% 0.003 160);
+  --color-foreground: oklch(21% 0.014 260);
+  --color-muted: oklch(96% 0.004 250);
+  --color-muted-foreground: oklch(48% 0.014 260);
+  --color-border: oklch(91% 0.006 250);
+  --color-input: oklch(91% 0.006 250);
+  --color-ring: oklch(56% 0.16 156);
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(21% 0.014 260);
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(21% 0.014 260);
+  --color-primary: oklch(56% 0.16 156);
+  --color-primary-foreground: oklch(99% 0.004 160);
+  --color-accent: oklch(56% 0.16 156);
+  --color-accent-foreground: oklch(99% 0.004 160);
+  --color-secondary: oklch(95% 0.015 156);
+  --color-secondary-foreground: oklch(24% 0.02 160);
+  --color-destructive: oklch(58% 0.21 25);
+  --color-destructive-foreground: oklch(99% 0.004 160);
   --color-warning: oklch(80% 0.15 80);
   --color-warning-foreground: oklch(34% 0.06 60);
-  --color-success: oklch(62% 0.15 152);
-  --color-success-foreground: oklch(99% 0.006 258);
-  --color-info: oklch(64% 0.15 232);
-  --color-info-foreground: oklch(99% 0.006 258);
-  --color-sky: oklch(64% 0.15 232);
+  --color-success: oklch(56% 0.16 156);
+  --color-success-foreground: oklch(99% 0.004 160);
+  --color-info: oklch(56% 0.16 156);
+  --color-info-foreground: oklch(99% 0.004 160);
+  --color-sky: oklch(64% 0.14 168);
 
-  /* Sidebar — deep indigo ink, the signature dark surface inside a light app. */
-  --color-sidebar: oklch(23% 0.07 264);
-  --color-sidebar-foreground: oklch(94% 0.012 258);
-  --color-sidebar-muted: oklch(70% 0.04 258);
-  --color-sidebar-active: oklch(60% 0.2 258);
-  --color-sidebar-border: oklch(33% 0.06 264);
+  /* Sidebar — clean white / light gray with anthracite text and emerald active state. */
+  --color-sidebar: oklch(99.5% 0.002 160);
+  --color-sidebar-foreground: oklch(21% 0.014 260);
+  --color-sidebar-muted: oklch(48% 0.014 260);
+  --color-sidebar-active: oklch(56% 0.16 156);
+  --color-sidebar-border: oklch(91% 0.006 250);
 
-  --grad-brand: linear-gradient(140deg, oklch(60% 0.21 258) 0%, oklch(64% 0.16 232) 100%);
-  --grad-hero: linear-gradient(140deg, oklch(97.5% 0.022 258) 0%, oklch(95% 0.04 240) 55%, oklch(95% 0.045 232) 100%);
-  --grad-tile-1: linear-gradient(140deg, oklch(95% 0.05 258) 0%, oklch(89% 0.11 258) 100%);
-  --grad-tile-2: linear-gradient(140deg, oklch(95% 0.05 232) 0%, oklch(89% 0.11 232) 100%);
+  --grad-brand: linear-gradient(140deg, oklch(56% 0.16 156) 0%, oklch(64% 0.14 168) 100%);
+  --grad-hero: linear-gradient(140deg, oklch(98% 0.012 156) 0%, oklch(96% 0.02 162) 55%, oklch(96% 0.015 168) 100%);
+  --grad-tile-1: linear-gradient(140deg, oklch(95% 0.04 156) 0%, oklch(89% 0.09 156) 100%);
+  --grad-tile-2: linear-gradient(140deg, oklch(95% 0.04 168) 0%, oklch(89% 0.09 168) 100%);
   --grad-tile-3: linear-gradient(140deg, oklch(95% 0.05 152) 0%, oklch(89% 0.10 158) 100%);
   --grad-tile-4: linear-gradient(140deg, oklch(95% 0.05 80) 0%, oklch(89% 0.10 80) 100%);
 
-  --shadow-soft: 0 1px 1px oklch(40% 0.05 258 / 0.04), 0 5px 18px oklch(40% 0.05 258 / 0.06);
-  --shadow-pop: 0 1px 2px oklch(40% 0.05 258 / 0.05), 0 16px 42px oklch(40% 0.05 258 / 0.12);
+  --shadow-soft: 0 1px 1px oklch(25% 0.01 260 / 0.04), 0 5px 18px oklch(25% 0.01 260 / 0.06);
+  --shadow-pop: 0 1px 2px oklch(25% 0.01 260 / 0.05), 0 16px 42px oklch(25% 0.01 260 / 0.12);
 }
 
-/* ── DARK (when toggled) — deep indigo night. ─────────────────────────────── */
+/* ── DARK (when toggled) — dark anthracite & emerald. ─────────────────────── */
 .dark {
-  --color-background: oklch(17% 0.03 264);
-  --color-foreground: oklch(94% 0.012 258);
-  --color-muted: oklch(23% 0.035 264);
-  --color-muted-foreground: oklch(68% 0.03 258);
-  --color-border: oklch(28% 0.04 264);
-  --color-input: oklch(28% 0.04 264);
-  --color-ring: oklch(66% 0.2 258);
-  --color-card: oklch(21% 0.035 264);
-  --color-card-foreground: oklch(94% 0.012 258);
-  --color-popover: oklch(21% 0.035 264);
-  --color-popover-foreground: oklch(94% 0.012 258);
-  --color-primary: oklch(72% 0.18 258);
-  --color-primary-foreground: oklch(18% 0.06 264);
-  --color-accent: oklch(72% 0.18 258);
-  --color-accent-foreground: oklch(18% 0.06 264);
-  --color-secondary: oklch(26% 0.04 264);
-  --color-secondary-foreground: oklch(92% 0.012 258);
-  --color-success: oklch(74% 0.15 152);
-  --color-info: oklch(72% 0.14 232);
-  --color-sky: oklch(72% 0.14 232);
-  --color-sidebar: oklch(14% 0.025 264);
-  --color-sidebar-foreground: oklch(91% 0.012 258);
-  --color-sidebar-muted: oklch(62% 0.035 258);
-  --color-sidebar-active: oklch(66% 0.2 258);
-  --color-sidebar-border: oklch(26% 0.04 264);
+  --color-background: oklch(15% 0.01 260);
+  --color-foreground: oklch(94% 0.008 160);
+  --color-muted: oklch(21% 0.012 260);
+  --color-muted-foreground: oklch(68% 0.014 260);
+  --color-border: oklch(26% 0.014 260);
+  --color-input: oklch(26% 0.014 260);
+  --color-ring: oklch(68% 0.16 156);
+  --color-card: oklch(19% 0.012 260);
+  --color-card-foreground: oklch(94% 0.008 160);
+  --color-popover: oklch(19% 0.012 260);
+  --color-popover-foreground: oklch(94% 0.008 160);
+  --color-primary: oklch(68% 0.16 156);
+  --color-primary-foreground: oklch(15% 0.02 160);
+  --color-accent: oklch(68% 0.16 156);
+  --color-accent-foreground: oklch(15% 0.02 160);
+  --color-secondary: oklch(24% 0.016 260);
+  --color-secondary-foreground: oklch(92% 0.008 160);
+  --color-success: oklch(68% 0.16 156);
+  --color-info: oklch(68% 0.16 156);
+  --color-sky: oklch(68% 0.14 168);
+  --color-sidebar: oklch(17% 0.012 260);
+  --color-sidebar-foreground: oklch(92% 0.008 160);
+  --color-sidebar-muted: oklch(64% 0.014 260);
+  --color-sidebar-active: oklch(66% 0.16 156);
+  --color-sidebar-border: oklch(25% 0.014 260);
 
-  --grad-brand: linear-gradient(140deg, oklch(70% 0.2 258) 0%, oklch(72% 0.15 232) 100%);
-  --grad-hero: radial-gradient(120% 120% at 12% 0%, oklch(27% 0.06 264) 0%, oklch(17% 0.03 264) 55%);
+  --grad-brand: linear-gradient(140deg, oklch(66% 0.16 156) 0%, oklch(68% 0.14 168) 100%);
+  --grad-hero: radial-gradient(120% 120% at 12% 0%, oklch(24% 0.02 260) 0%, oklch(15% 0.01 260) 55%);
   --shadow-soft: 0 1px 1px oklch(0% 0 0 / 0.3), 0 8px 24px oklch(0% 0 0 / 0.3);
   --shadow-pop: 0 2px 6px oklch(0% 0 0 / 0.35), 0 24px 56px oklch(0% 0 0 / 0.5);
 }

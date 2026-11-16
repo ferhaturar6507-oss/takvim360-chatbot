@@ -1,14 +1,14 @@
 import { cn } from "@/lib/utils";
 import appConfig from "@/app.config";
 
-/** Replio logomark — a chat bubble with an AI spark inside. Indigo→sky. */
+/** Takvim 360 logomark — a chat bubble with an AI spark inside. Emerald green. */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 40 40" className={className} role="img" aria-label={appConfig.name}>
       <defs>
         <linearGradient id="yg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#6366f1" />
-          <stop offset="1" stopColor="#38bdf8" />
+          <stop offset="0" stopColor="#10b981" />
+          <stop offset="1" stopColor="#059669" />
         </linearGradient>
       </defs>
       <rect width="40" height="40" rx="11" fill="url(#yg)" />

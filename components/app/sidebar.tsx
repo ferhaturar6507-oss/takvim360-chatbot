@@ -63,20 +63,20 @@ export function Sidebar() {
   const navItems = activeBusinessId
     ? appConfig.nav
     : appConfig.nav.filter((item) =>
-      ["/dashboard", "/conversations", "/settings"].includes(item.href),
-    );
+        ["/dashboard", "/conversations", "/settings"].includes(item.href),
+      );
 
   return (
-    <aside className="hidden bg-sidebar text-sidebar-foreground md:flex md:w-68 md:flex-col">
+    <aside className="hidden border-r border-sidebar-border bg-sidebar text-sidebar-foreground md:flex md:w-68 md:flex-col">
       <div className="flex h-16 items-center justify-between border-b border-sidebar-border px-5">
         <Link
           href="/dashboard"
           onClick={() => setActiveBusinessId(null)}
           className="flex items-center gap-2"
         >
-          <Logo onDark />
+          <Logo />
         </Link>
-        <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-sidebar-muted">
+        <span className="rounded-full bg-emerald-500/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
           Agency
         </span>
       </div>
@@ -86,7 +86,7 @@ export function Sidebar() {
         <button
           type="button"
           onClick={() => setAddModalOpen(true)}
-          className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-sidebar-active px-3 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-95"
+          className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-3 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-95"
         >
           <Plus className="h-4 w-4" />
           {addLabel}
@@ -99,15 +99,15 @@ export function Sidebar() {
           <button
             type="button"
             onClick={() => setSwitcherOpen((o) => !o)}
-            className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-xl border border-sidebar-border bg-white/5 px-3 py-2 text-left text-sm transition hover:bg-white/10"
+            className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-xl border border-sidebar-border bg-muted/60 px-3 py-2 text-left text-sm transition hover:bg-muted"
           >
             <div className="flex min-w-0 items-center gap-2.5">
               <span
                 className={cn(
                   "grid h-7 w-7 shrink-0 place-items-center rounded-lg text-xs font-semibold",
                   activeBusiness
-                    ? "bg-primary/25 text-white"
-                    : "bg-emerald-500/20 text-emerald-300",
+                    ? "bg-primary/15 text-primary"
+                    : "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400",
                 )}
               >
                 {activeBusiness ? (
@@ -117,7 +117,7 @@ export function Sidebar() {
                 )}
               </span>
               <div className="min-w-0">
-                <p className="truncate text-xs font-semibold text-white">
+                <p className="truncate text-xs font-semibold text-sidebar-foreground">
                   {activeBusiness ? activeBusiness.name : agencyLabel}
                 </p>
                 <p className="truncate text-[10px] text-sidebar-muted">
@@ -136,38 +136,38 @@ export function Sidebar() {
           </button>
 
           {switcherOpen && (
-            <div className="absolute left-0 right-0 top-full z-40 mt-1.5 max-h-72 overflow-y-auto rounded-xl border border-sidebar-border bg-sidebar p-1.5 shadow-pop ring-1 ring-white/10">
+            <div className="absolute left-0 right-0 top-full z-40 mt-1.5 max-h-72 overflow-y-auto rounded-xl border border-border bg-popover p-1.5 text-popover-foreground shadow-pop">
               <button
                 type="button"
                 onClick={() => handleSelect(null)}
                 className={cn(
                   "flex w-full cursor-pointer items-center gap-2.5 rounded-lg px-2.5 py-2 text-left text-xs transition",
                   activeBusinessId === null
-                    ? "bg-sidebar-active/25 text-white"
-                    : "text-sidebar-muted hover:bg-white/5 hover:text-white",
+                    ? "bg-primary/12 text-primary"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
               >
-                <Layers className="h-4 w-4 shrink-0 text-emerald-400" />
+                <Layers className="h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                 <span className="flex-1 truncate font-semibold">
                   {agencyLabel}
                 </span>
                 {activeBusinessId === null && (
-                  <Check className="h-3.5 w-3.5 text-emerald-400" />
+                  <Check className="h-3.5 w-3.5 text-primary" />
                 )}
               </button>
 
               {businesses.length > 0 && (
-                <div className="my-1 border-t border-sidebar-border/60" />
+                <div className="my-1 border-t border-border" />
               )}
 
               {businesses.map((b) => {
                 const selected = b.id === activeBusinessId;
                 const dotColor =
                   b.whatsapp_status === "connected"
-                    ? "bg-emerald-400"
+                    ? "bg-emerald-500"
                     : b.whatsapp_status === "error"
-                      ? "bg-rose-400"
-                      : "bg-amber-400";
+                      ? "bg-rose-500"
+                      : "bg-amber-500";
                 return (
                   <button
                     key={b.id}
@@ -176,23 +176,23 @@ export function Sidebar() {
                     className={cn(
                       "flex w-full cursor-pointer items-center gap-2.5 rounded-lg px-2.5 py-2 text-left text-xs transition",
                       selected
-                        ? "bg-sidebar-active/25 text-white"
-                        : "text-sidebar-muted hover:bg-white/5 hover:text-white",
+                        ? "bg-primary/12 text-primary"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground",
                     )}
                   >
                     <span
                       className={cn("h-2 w-2 shrink-0 rounded-full", dotColor)}
                     />
                     <div className="min-w-0 flex-1">
-                      <p className="truncate font-medium text-white">
+                      <p className="truncate font-medium text-foreground">
                         {b.name}
                       </p>
-                      <p className="truncate text-[10px] text-sidebar-muted">
+                      <p className="truncate text-[10px] text-muted-foreground">
                         {b.sector} · {b.package_type}
                       </p>
                     </div>
                     {selected && (
-                      <Check className="h-3.5 w-3.5 shrink-0 text-white" />
+                      <Check className="h-3.5 w-3.5 shrink-0 text-primary" />
                     )}
                   </button>
                 );
@@ -226,8 +226,8 @@ export function Sidebar() {
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
                 active
-                  ? "bg-sidebar-active text-white shadow-sm"
-                  : "text-sidebar-muted hover:bg-white/5 hover:text-sidebar-foreground",
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-sidebar-muted hover:bg-muted hover:text-sidebar-foreground",
               )}
             >
               <Icon name={item.icon} className="h-[18px] w-[18px] shrink-0" />
@@ -239,7 +239,7 @@ export function Sidebar() {
 
       <div className="border-t border-sidebar-border p-3">
         <div className="flex items-center gap-3 rounded-lg px-2 py-1.5">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-sm font-semibold">
+          <span className="grid h-9 w-9 place-items-center rounded-full bg-primary/12 text-sm font-semibold text-primary">
             T3
           </span>
           <div className="min-w-0 flex-1">
@@ -251,7 +251,7 @@ export function Sidebar() {
           <Link
             href="/login"
             aria-label={ui.logout}
-            className="grid h-8 w-8 place-items-center rounded-md text-sidebar-muted transition-colors hover:bg-white/5 hover:text-sidebar-foreground"
+            className="grid h-8 w-8 place-items-center rounded-md text-sidebar-muted transition-colors hover:bg-muted hover:text-sidebar-foreground"
           >
             <LogOut className="h-4 w-4" />
           </Link>
